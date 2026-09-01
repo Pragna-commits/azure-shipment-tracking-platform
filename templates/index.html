@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Azure Shipment & Tank Tracking</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f4f6f8;
+        }
+
+        h1 {
+            color: #1f2937;
+        }
+
+        .subtitle {
+            color: #6b7280;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            margin-top: 25px;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: #e5e7eb;
+        }
+
+        .status {
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <h1>Azure Shipment & Tank Tracking Platform</h1>
+
+    <p class="subtitle">
+        Cloud Architecture Project – Microsoft Azure
+    </p>
+
+
+    <table>
+
+        <tr>
+
+            <th>Job Number</th>
+            <th>Tank Number</th>
+            <th>Customer</th>
+            <th>Origin</th>
+            <th>Destination</th>
+            <th>Status</th>
+
+        </tr>
+
+
+        {% for shipment in shipments %}
+
+        <tr>
+
+            <td>{{ shipment.job }}</td>
+
+            <td>{{ shipment.tank }}</td>
+
+            <td>{{ shipment.customer }}</td>
+
+            <td>{{ shipment.origin }}</td>
+
+            <td>{{ shipment.destination }}</td>
+
+            <td class="status">
+                {{ shipment.status }}
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+
+    </table>
+
+</body>
+
+</html>
